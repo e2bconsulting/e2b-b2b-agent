@@ -1,11 +1,11 @@
 ---
 name: apres-vente
-description: Gère l'après-vente en brouillons — confirmation de commande, demande de validation ou d'attestation après livraison, relance de facture impayée — et met à jour la fiche CRM. Utiliser quand l'utilisateur dit « le client a confirmé », « relance la facture de X », ou quand une fiche passe en Gagné.
+description: Gère l'après-vente en brouillons — confirmation de commande, demande de validation ou d'attestation après livraison, relance de facture impayée — et met à jour la fiche de suivi. Utiliser quand l'utilisateur dit « le client a confirmé », « relance la facture de X », ou quand une fiche passe en Gagné.
 ---
 
 # Après-vente
 
-Lire `regles.md`, `equipe.md`, `ton-signatures.md`, `relances.md`, `crm.md` (dans `../socle/references/`). Brouillon seulement si le récepteur principal est `BOITE`.
+Lire `regles.md`, `equipe.md`, `ton-signatures.md`, `relances.md`, `suivi.md` (dans `../socle/references/`). Brouillon seulement si le récepteur principal est `BOITE`.
 
 ## A. Confirmation de commande
 Remerciement, rappel de l'offre et des dates (calendrier), prochaines étapes, informations à fournir par le client. Fiche : `Gagné`, échéance = lendemain de la livraison. Assigner la finance.

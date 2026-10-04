@@ -1,7 +1,7 @@
 {
   "name": "e2b-b2b-agent",
-  "version": "0.1.0",
-  "description": "Agent de relation client B2B : tri des demandes entrantes, brouillons de réponse, suivi CRM et relances contextuelles. Brouillons uniquement, jamais d'envoi.",
+  "version": "0.3.0",
+  "description": "Agent de relation client B2B multi-connecteurs (Gmail ou Outlook, HubSpot ou Brevo, ClickUp, Notion, Airtable ou Drive) : tri des demandes, brouillons de réponse, suivi et relances contextuelles. Brouillons uniquement, jamais d'envoi.",
   "author": { "name": "E2B Consulting & Training" },
   "license": "MIT"
 }

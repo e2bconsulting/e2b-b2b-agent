@@ -1,7 +1,7 @@
 # Équipe et routage du récepteur principal
 
 ## Annuaire (à remplir)
-| Personne | Rôle | Adresses | ID CRM |
+| Personne | Rôle | Adresses | ID base de suivi |
 |---|---|---|---|
 | <Collaborateur 1> | Commercial / Account manager | <adresses> | <id> |
 | <Collaborateur 2> | Dirigeant / expert | <adresses> | <id> |

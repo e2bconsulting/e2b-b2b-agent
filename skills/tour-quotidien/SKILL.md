@@ -5,10 +5,10 @@ description: Lance un passage complet de l'agent de relation client B2B pour la 
 
 # Passage complet
 
-N'écrit que des brouillons Gmail et des fiches dans la liste CRM de suivi.
+N'écrit que des brouillons email et des fiches dans la base de suivi configurée.
 
 ## Déroulé
-1. Lire `../socle/references/regles.md` et `equipe.md`.
+1. Lire `../socle/references/regles.md`, `config.md`, `connecteurs.md` et `equipe.md`. Exécuter les contrôles de démarrage de `config.md` ; si les connecteurs ne sont pas choisis, appeler le skill `configuration`.
 2. Identifier `BOITE` (étape 0 de `equipe.md`). Annoncer : « Passage de l'agent pour <personne> (<adresse>) ».
 3. `tri-demandes` sur la fenêtre depuis le dernier passage (`newer_than:1d` par défaut ; `newer_than:3d` le lundi ou après un passage manqué).
 4. Pour chaque fiche dont le récepteur principal est `BOITE` et sans brouillon : `reponse-client` ou `apres-vente`.

@@ -1,9 +1,11 @@
 # Règles non négociables
 
 ## Autonomie
-- Gmail : `create_draft` uniquement (avec `replyToMessageId` pour répondre dans le fil). Interdits : envoi, réponse directe, transfert, suppression, archivage, labels.
-- CRM : créer/mettre à jour/commenter les fiches de la liste de suivi uniquement. Les autres listes sont en lecture seule (dédoublonnage).
-- Calendrier et Drive : lecture seule.
+- Email (Gmail ou Outlook) : création de **brouillons uniquement** (`email.creer_brouillon`, en réponse au message). Interdits : envoi, réponse directe, transfert, suppression, archivage, libellés.
+- Base de suivi (ClickUp, Notion, Airtable ou Drive) : créer, mettre à jour et commenter les fiches de la base de suivi configurée uniquement. Les autres bases sont en lecture seule (dédoublonnage).
+- CRM (HubSpot ou Brevo) : lecture seule. Jamais de campagne, d'envoi de masse ni de modification de liste.
+- Agenda et fichiers : lecture seule.
+- Les noms d'outils exacts sont dans `connecteurs.md` ; le choix des connecteurs est dans `config.md`.
 
 ## Prix
 - Aucun montant, remise, prix unitaire, même s'il figure dans l'historique du fil.
@@ -14,6 +16,7 @@
 ## Données et confidentialité
 - Pas de téléphone, d'email ni de montant dans le titre d'une fiche.
 - Ne jamais transmettre d'information d'un client à un autre ; ne jamais nommer un autre client.
+- Contact désinscrit ou sur liste noire dans le CRM : aucune relance, jamais.
 - Documents internes sensibles (RH, stratégie, contrats de travail) : ne jamais lire ni citer.
 
 ## Qualité

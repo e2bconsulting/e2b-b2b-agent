@@ -45,7 +45,7 @@ Paramètres à adapter à votre pays et secteur :
 
 ## 4. Exécution le jour J
 Une relance n'est rédigée **que le jour où elle est due** (date d'échéance ≤ aujourd'hui) :
-1. Relire le fil Gmail (`get_thread`). Si le client a écrit depuis la dernière action interne → annuler la relance, re-détecter le signal, recalculer.
+1. Relire le fil (`email.lire_fil`) et, si le CRM est actif, vérifier `crm.statut_desinscription` : un contact désinscrit sort du moteur (refus définitif). Si le client a écrit depuis la dernière action interne → annuler la relance, re-détecter le signal, recalculer.
 2. Si un humain a déjà relancé (message interne plus récent que la fiche) → mettre à jour `Dernier contact`, recalculer à partir de ce message.
 3. Sinon → brouillon de relance dans le fil (`replyToMessageId` = dernier message), angle de la ligne correspondante, jamais « je me permets de vous relancer ».
 4. Incrémenter `Nb relances`, calculer la relance suivante, mettre à jour échéance + fiche, commenter le journal.
