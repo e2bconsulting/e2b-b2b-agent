@@ -74,7 +74,7 @@ Une fiche, ou toute tâche d'une autre base ou liste, est **close** dès qu'elle
 
 | Base | La fiche est close quand… |
 |---|---|
-| ClickUp | le type de son statut est `Done` ou `Closed` ; à défaut `date_closed` (ou `date_done`) est renseigné ; à défaut son statut s'appelle `complete`, `closed`, `done`, `terminé` ou `clôturé` |
+| ClickUp | le type de son statut est `Done` ou `Closed` ; à défaut `date_closed` (ou `date_done`) est renseigné ; en dernier recours seulement, si ni type de statut ni date de clôture ne sont lisibles, son statut s'appelle `complete`, `closed`, `done`, `terminé` ou `clôturé` |
 | Notion | `Statut` = Clos (ou statut du groupe « Terminé / Complete » si la base utilise une propriété Statut native) |
 | Airtable | `Statut` = Clos |
 | Drive (Sheet) | colonne `Statut` = Clos |
@@ -83,14 +83,14 @@ Une fiche **ouverte** est toute fiche non close, quel que soit son statut (`to d
 
 ### 1. Rechercher (toujours, fiches closes comprises)
 1. `suivi.chercher`, **fiches closes incluses**, toutes pages. Comparer la ligne `Fil email` des fiches candidates (même entreprise ou même domaine email) avec l'identifiant du fil traité, puis le nom de l'entreprise et le domaine email. Une recherche ne lit pas toujours le corps des fiches : lire les fiches candidates.
-2. Chercher aussi les autres bases ou listes accessibles, **tâches closes comprises**, et le CRM si actif (affaire ouverte) → `Tâche liée` (lecture seule, jamais modifiée). Une tâche close dans une autre base pour le même client et le même besoin suit la même règle qu'une fiche close (`2 et `3) : l'agent ne la rouvre jamais ; si les trois conditions du `3 sont réunies, il crée une nouvelle fiche dans sa propre base avec `Tâche liée` vers elle.
+2. Chercher aussi les autres bases ou listes accessibles, **tâches closes comprises**, et le CRM si actif (affaire ouverte) → `Tâche liée` (lecture seule, jamais modifiée). Une tâche close dans une autre base pour le même client et le même besoin suit la même règle qu'une fiche close (§2 et §3) : l'agent ne la rouvre jamais ; si les trois conditions du §3 sont réunies, il crée une nouvelle fiche dans sa propre base avec `Tâche liée` vers elle.
 3. Consigner la recherche : entrée de journal sur la fiche trouvée, ou mention dans le récapitulatif si aucune fiche n'existe.
 
 ### 2. Lire le statut de la fiche trouvée (`suivi.statut`)
 | Statut | Conduite |
 |---|---|
 | Ouverte (`to do`, `in progress` ou tout statut non clos) | Mettre à jour cette fiche. Ne jamais en créer une seconde pour le même client et le même besoin. |
-| Close (voir `0) | Aucune création de fiche, aucun brouillon, aucune relance, aucune modification de l'échéance ni du statut détaillé. Signaler « fiche close ignorée » dans le récapitulatif. Seule exception : la réouverture (`3). |
+| Close (voir §0) | Aucune création de fiche, aucun brouillon, aucune relance, aucune modification de l'échéance ni du statut détaillé. Signaler « fiche close ignorée » dans le récapitulatif. Seule exception : la réouverture (§3). |
 | Aucune fiche | Créer la fiche normalement. |
 
 ### 3. Réouverture d'une fiche close
@@ -104,13 +104,13 @@ Conduite lorsque les trois conditions sont réunies :
 - **Besoin distinct** (autre offre, autre périmètre) → nouvelle fiche, avec `Tâche liée` vers la fiche close.
 - **Doute** sur l'un des trois critères → ne rien créer ni rouvrir ; le signaler dans le tableau des actions humaines.
 
-Fiche `Perdu` après un refus définitif ou pour un contact désinscrit du CRM : si le client réécrit, la réouverture sert uniquement à répondre à son message, jamais à relancer.
+Fiche `Perdu` après un refus définitif ou pour un contact désinscrit du CRM : si le client réécrit, la réouverture sert uniquement à répondre à son message, jamais à relancer : aucune échéance de relance n'est programmée (`Prochaine relance` vide, `Nb relances` figé).
 
 ### 4. Ne pas retraiter un fil déjà traité
 Si le dernier message du client dans le fil n'est pas plus récent que `Dernier contact client` de la fiche (ouverte ou close), ne rien écrire : ni entrée de journal, ni mise à jour, ni brouillon. Ce contrôle empêche la fenêtre de lecture glissante (3 derniers jours) de recréer ou de relancer le même dossier chaque jour.
 
 ### 5. Seule exception d'écriture sur une fiche close
-`dossier-client` peut écrire sur une fiche close, et uniquement les trois lignes `Dossier client`, `Dossier mis à jour le` et `Synthèse`. Aucun autre skill ne modifie une fiche close, hors réouverture justifiée au `3.
+`dossier-client` peut écrire sur une fiche close, et uniquement les trois lignes `Dossier client`, `Dossier mis à jour le` et `Synthèse`. Aucun autre skill ne modifie une fiche close, hors réouverture justifiée au §3.
 
 ## Date modifiée à la main
 Si l'échéance diffère de `Prochaine relance`, un humain l'a changée : recopier l'échéance dans la fiche, `Date fixée manuellement : oui`, ne plus la recalculer tant qu'elle n'est pas passée.
