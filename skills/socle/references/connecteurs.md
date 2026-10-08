@@ -34,7 +34,8 @@ Règles CRM :
 | Opération | ClickUp | Notion | Airtable | Drive (Google Sheet) |
 |---|---|---|---|---|
 | `suivi.lister_dues` | filtrer les tâches de la liste par échéance ≤ aujourd'hui et statut | interroger la base : `Prochaine relance` ≤ aujourd'hui, statut ouvert | enregistrements dont `Prochaine relance` ≤ aujourd'hui | lire la feuille puis filtrer les lignes |
-| `suivi.chercher` (dédoublonnage) | recherche dans la liste, tâches closes incluses | interroger la base par nom / fil | recherche par nom / fil | chercher dans la feuille |
+| `suivi.chercher` (dédoublonnage) | recherche dans la liste, tâches closes incluses, toutes pages | interroger la base par nom / fil, fiches closes incluses | recherche par nom / fil, fiches closes incluses | chercher dans la feuille, lignes closes incluses |
+| `suivi.statut` | lire le type du statut (`Done` / `Closed`), à défaut `date_closed` | lire la propriété `Statut` | lire le champ `Statut` | lire la colonne `Statut` |
 | `suivi.creer` | créer une tâche | créer une page dans la base | créer un enregistrement | ajouter une ligne |
 | `suivi.maj` | modifier la tâche | modifier les propriétés de la page | modifier l'enregistrement | modifier la ligne |
 | `suivi.journal` | commentaire sur la tâche | commentaire sur la page | note ou champ `Journal` | colonne `Journal` (ajout daté) |
